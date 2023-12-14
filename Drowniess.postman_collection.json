@@ -1,0 +1,815 @@
+{
+	"info": {
+		"_postman_id": "1968b002-4fc9-4ec6-9e5d-775d67cac18f",
+		"name": "Drowniess",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12928749",
+		"_collection_link": "https://planetary-rocket-315393.postman.co/workspace/Dev-End-Solutions~29801cea-7973-4131-8589-b052068d21e1/collection/12928749-1968b002-4fc9-4ec6-9e5d-775d67cac18f?action=share&source=collection_link&creator=12928749"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"token\", pm.response.json().data.access_token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Hasnainu4@",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Test User",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Hasnainu4@",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "Hasnainu4@",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ride Request",
+			"item": [
+				{
+					"name": "List Ride Requests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/ride/request",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"ride",
+								"request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Ride Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "source",
+									"value": "Islamabad, Islamabad Capital Territory, Pakistan",
+									"type": "text"
+								},
+								{
+									"key": "source_lat",
+									"value": "33.6844202",
+									"type": "text"
+								},
+								{
+									"key": "source_long",
+									"value": "73.04788479999999",
+									"type": "text"
+								},
+								{
+									"key": "destination",
+									"value": "New Islamabad Airport Rd, Islamabad, Rawalpindi, Punjab, Pakistan",
+									"type": "text"
+								},
+								{
+									"key": "destination_lat",
+									"value": "33.5564864",
+									"type": "text"
+								},
+								{
+									"key": "destination_long",
+									"value": "72.8340621",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/ride/request",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"ride",
+								"request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Ride Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/ride/request/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"ride",
+								"request",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ride Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "source",
+									"value": "Islamabad, Islamabad Capital Territory, Pakistan",
+									"type": "text"
+								},
+								{
+									"key": "source_lat",
+									"value": "33.6844202",
+									"type": "text"
+								},
+								{
+									"key": "source_long",
+									"value": "73.04788479999999",
+									"type": "text"
+								},
+								{
+									"key": "destination",
+									"value": "New Islamabad Airport Rd, Islamabad, Rawalpindi, Punjab, Pakistan",
+									"type": "text"
+								},
+								{
+									"key": "destination_lat",
+									"value": "33.5564864",
+									"type": "text"
+								},
+								{
+									"key": "destination_long",
+									"value": "72.8340621",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "ended",
+									"description": "pending, started, ended",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/ride/request/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"ride",
+								"request",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Ride Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/ride/request/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"ride",
+								"request",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Drownies Detected",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\"image\": \"https://b8ac-103-149-240-164.ngrok-free.app/storage/image/20231204052300.jpg\", \"place\": \"M764+6R, Nilore, Islamabad, Islamabad Capital Territory, Pakistan\", \"place_lat\": 33.66072478333333, \"place_long\": 73.25628090000001, \"ride_request_id\": 1, \"video\": \"https://b8ac-103-149-240-164.ngrok-free.app/storage/video/20231204052300.mp4\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/ride/request/drownies/detect",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"ride",
+								"request",
+								"drownies",
+								"detect"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "SOS",
+			"item": [
+				{
+					"name": "Sos List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/sos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"sos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SOS Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone_no",
+									"value": "+923325856755",
+									"type": "text"
+								},
+								{
+									"key": "call",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/sos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"sos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SOS Update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "phone_no",
+									"value": "+923325856754",
+									"type": "text"
+								},
+								{
+									"key": "call",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/sos/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"sos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SOS Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/user/sos/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"sos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Hasnain",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hasnain@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "profile_image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/profile/update/account",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								"update",
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "old_password",
+									"value": "Hasnainu4@",
+									"type": "text"
+								},
+								{
+									"key": "new_password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "new_password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/profile/update/password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								"update",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Account Rquest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/user/profile/request/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								"request",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Settings",
+			"item": [
+				{
+					"name": "get Faqs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/settings/faqs",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"settings",
+								"faqs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get About us",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/settings/aboutus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"settings",
+								"aboutus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Terms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/settings/terms",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"settings",
+								"terms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Privacy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/settings/privacy",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"settings",
+								"privacy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
